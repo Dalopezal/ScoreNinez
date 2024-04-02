@@ -1,23 +1,20 @@
 """
-    Clase Utilizada para el el desarrollo del modelo de aprendizaje para la dimension Binestar material
-    Randon Forest
-    Daniel Alejandro Lopez
+    Modelo de aprendizaje para la dimension Bienestar material
+    Random Forest
     Fecha:18/01/2024
 """
 
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from imblearn.under_sampling import RandomUnderSampler
 import pickle
 
-
 import pandas as pd
-from CargueDatos import *
-ObjCargue=CargueDatos()
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.model_selection import train_test_split
 
-df=ObjCargue.CargarDatosExpertosBienestarDestino()
+from CargueDatos import *
+
+df = CargueDatos.CargarDatosExpertosBienestarMaterialDestino()
+
 print(df.head(10))
 
 X = df.drop("Riesgo BM", axis=1)
@@ -57,7 +54,7 @@ data = {
 print(data)
 print('prediction')
 df_prediction = pd.DataFrame([data])
-prediction=modelo.predict(df_prediction)
+prediction = modelo.predict(df_prediction)
 print(prediction)
 
 ### Save model PKL
