@@ -3,24 +3,19 @@
     Arbol de decisiones.
     Daniel Alejandro Lopez
 """
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from imblearn.under_sampling import RandomUnderSampler
+
 import pickle
 import pandas as pd
 from CargueDatos import *
-
-#Datos Expertos 
-datosExpertos=CargueDatos.CargarDatosExpertosSaludDestino()
-
 #randon Forest
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn.model_selection import GridSearchCV
+
+#Datos Expertos
+datosExpertos=CargueDatos.CargarDatosExpertosSaludDestino()
 
 #variables destino.
 X = datosExpertos.drop("Riesgo SA", axis=1)
@@ -44,14 +39,14 @@ print(class_report)
 
 #Datos ingresados desde un API.
 dataPrediccion = {
-    "Edad del menor": 0,
-    "Categoria del Municipio": 7,
-    "Peso al nacer": 3,
-    "Aplicacion de la dosis de vacuna de pentavalente": 3,
-    "Aplicacion de la primera dosis de triple viral": 3,
-    "Estado de Nutricion": 1,
-    "Lactancia continuada a los 24 meses":3,
-    "¿Alguna enfermedad?": 3
+    "Edad": 0,
+    "CategoriaMunicipio": 7,
+    "PesoNacer": 3,
+    "vacunaPentavalente": 3,
+    "tripleViral": 3,
+    "Nutricion": 1,
+    "Lactancia":3,
+    "enfermedad": 3
 }
 
 print('-------------------------------------Prediccion ---------------------------------:')
