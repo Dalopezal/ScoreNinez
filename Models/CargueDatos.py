@@ -1,7 +1,5 @@
 """
-    Clase Utilizada para el manejo de la categoria de los municipios.
-    Daniel Alejandro Lopez
-    Fecha:18/01/2024
+    Clase Utilizada para la el cargue de los datos de los diferentes archivos de excel
 """
 
 import pandas as pd
@@ -13,34 +11,26 @@ class CargueDatos:
         pass
 
     # Cargar datos en el dataFrame
+    @staticmethod
     def CargarDatosCategorias():
-        df = pd.DataFrame()
-        df = pd.read_excel('datasets\CategorizacionMunicipio.xlsx', sheet_name="Categoria")
-        return df
+        return pd.read_excel('datasets\CategorizacionMunicipio.xlsx', sheet_name="Categoria")
 
     # Cargar datos en el dataFrame
-    def CargarDatosTipos(self):
-        df = pd.DataFrame()
-        df = pd.read_excel('datasets\Distancias.xlsx', sheet_name="Distancia")
-        return df
+    @staticmethod
+    def CargarDatosTipos():
+        return pd.read_excel('datasets\Distancias.xlsx', sheet_name="Distancia")
+
 
     # Cargar datos en el dataFrame Sin procesar Salud (Sin organizar)
-    def CargarDatosExpertosSaludOrigen(self):
-        df = pd.DataFrame()
-        df = pd.read_excel('datasets\SaludSinProcesar.xlsx', sheet_name="Salud")
-        return df
+    @staticmethod
+    def CargarDatosExpertosSaludOrigen():
+        return pd.read_excel('datasets\SaludSinProcesar.xlsx', sheet_name="Salud")
 
     # Cargar datos en el dataFrame Procesado salud  (organizados)
-    def CargarDatosExpertosSaludDestino(self):
-        df = pd.DataFrame()
-        df = pd.read_excel('datasets\SaludProcesado.xlsx', index_col=None)
-        return df
+    @staticmethod
+    def CargarDatosExpertosSaludDestino():
+        return pd.read_excel('datasets\SaludProcesado.xlsx', index_col=None)
 
-    # Cargar datos en el dataFrame Sin procesar Bienestar material (Sin organizar)
-    def CargarDatosExpertosBienestarOrigen(self):
-        df = pd.DataFrame()
-        df = pd.read_excel('datasets\BienestarSinProcesado.xlsx')
-        return df
 
     @staticmethod
     def CargarDatosExpertosBienestarMaterialDestino():
@@ -50,14 +40,13 @@ class CargueDatos:
         return pd.read_excel('datasets/BienestarMaterial/BienestarProcesado.xlsx', index_col=None)
 
     # Cargar datos en el dataFrame Origen  (Sin organizar)
-    def CargarDatosUniversidadOrigen(self):
-        df = pd.DataFrame()
-        df = pd.read_excel(r"datasets\Universidad.xlsx", sheet_name="Otras Dimensiones")
-        return df
+    @staticmethod
+    def CargarDatosUniversidadOrigen():
+        return pd.read_excel(r"datasets\Universidad.xlsx", sheet_name="Otras Dimensiones")
 
-        # Cargar datos en el dataFrame Destino  (organizados)
 
-    def CargarDatosUniversidadDestino(self):
-        df = pd.DataFrame()
-        df = pd.read_excel(r"datasets\UniversidadOrganizados.xlsx", sheet_name="Salud_dataset")
-        return df
+    # Cargar datos en el dataFrame Destino  (organizados)
+    @staticmethod
+    def CargarDatosUniversidadDestino():
+        return pd.read_excel(r"datasets\UniversidadOrganizados.xlsx", sheet_name="Salud_dataset")
+
