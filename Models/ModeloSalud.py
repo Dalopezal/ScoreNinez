@@ -1,8 +1,7 @@
 """
-    Clase Utilizada para el el desarrollo del modelo de aprendizaje para la dimension salud
-    Arbol de desiciones.
+    Clase Utilizada para el desarrollo del modelo de aprendizaje para la dimension salud
+    Arbol de decisiones.
     Daniel Alejandro Lopez
-    Fecha:18/01/2024
 """
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -12,9 +11,9 @@ from imblearn.under_sampling import RandomUnderSampler
 import pickle
 import pandas as pd
 from CargueDatos import *
-ObjCargue=CargueDatos()
+
 #Datos Expertos 
-datosExpertos=ObjCargue.CargarDatosExpertosSaludDestino()
+datosExpertos=CargueDatos.CargarDatosExpertosSaludDestino()
 
 #randon Forest
 from sklearn.model_selection import train_test_split

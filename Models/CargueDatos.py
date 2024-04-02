@@ -26,10 +26,13 @@ class CargueDatos:
     def CargarDatosExpertosSaludOrigen():
         return pd.read_excel('datasets\SaludSinProcesar.xlsx', sheet_name="Salud")
 
-    # Cargar datos en el dataFrame Procesado salud  (organizados)
     @staticmethod
     def CargarDatosExpertosSaludDestino():
-        return pd.read_excel('datasets\SaludProcesado.xlsx', index_col=None)
+        """
+        Cargar datos en el dataFrame Destino Salud (organizados)
+        :return:
+        """
+        return pd.read_excel('datasets/Salud/SaludProcesado.xlsx', index_col=None)
 
 
     @staticmethod
