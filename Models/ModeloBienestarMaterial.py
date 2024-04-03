@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 
 from CargueDatos import *
 
-df = CargueDatos.CargarDatosExpertosBienestarMaterialDestino()
+df = CargueDatos.ExpertosBienestarMaterialDestino()
 
 print(df.head(10))
 
@@ -22,7 +22,7 @@ y = df["Riesgo BM"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)
 
-modelo = RandomForestClassifier(n_estimators=100, random_state=42)
+modelo = RandomForestClassifier(n_estimators=100, min_samples_split=7, min_samples_leaf=1)
 
 modelo.fit(X_train, y_train)
 
@@ -58,6 +58,6 @@ prediction = modelo.predict(df_prediction)
 print(prediction)
 
 ### Save model PKL
-pck_file = "BinestarMaterial.pkl"
+pck_file = "BienestarMaterial.pkl"
 with open(pck_file, 'wb') as file:
     pickle.dump(modelo, file)

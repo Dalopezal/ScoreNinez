@@ -1,7 +1,6 @@
 """
     Clase Utilizada para el desarrollo del modelo de aprendizaje para la dimension salud
-    Arbol de decisiones.
-    Daniel Alejandro Lopez
+    RandomForest
 """
 
 import pickle
@@ -11,26 +10,26 @@ from CargueDatos import *
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from imblearn.under_sampling import RandomUnderSampler
-from sklearn.model_selection import GridSearchCV
+from imblearn.over_sampling import RandomOverSampler
+
 
 #Datos Expertos
-datosExpertos=CargueDatos.CargarDatosExpertosSaludDestino()
+datosExpertos=CargueDatos.ExpertosSaludDestino()
 
 #variables destino.
 X = datosExpertos.drop("Riesgo SA", axis=1)
 y = datosExpertos["Riesgo SA"]
 
-## 30% para test y 70% para train
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)
+oversample = RandomOverSampler(random_state=42)
+X_resampled, y_resampled = oversample.fit_resample(X, y)
 
+X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.30, random_state=42)
 
 modelo = RandomForestClassifier(n_estimators=100, random_state=42,criterion='gini')
 
 modelo.fit(X_train, y_train)
 
 y_pred = modelo.predict(X_test)
-
 
 # Mostrar el informe de clasificación
 class_report = classification_report(y_test, y_pred)

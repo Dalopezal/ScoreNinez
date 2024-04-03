@@ -29,16 +29,24 @@ class CargueDatos:
         return pd.read_excel('datasets\SaludSinProcesar.xlsx', sheet_name="Salud")
 
     @staticmethod
-    def CargarDatosExpertosSaludDestino():
+    def ExpertosSaludDestino():
         """
         Cargar datos en el dataFrame Destino Salud (organizados)
         :return:
         """
         return pd.read_excel('datasets/Salud/SaludProcesado.xlsx', index_col=None)
 
+    @staticmethod
+    def ExpertosBienestarMaternoDestino():
+        """
+        Cargar datos en el dataFrame Bienestar Materno
+        :return:
+        """
+        return pd.read_excel('datasets/BienestarMaterno/BienestarProcesado.xlsx', index_col=None)
+
 
     @staticmethod
-    def CargarDatosExpertosBienestarMaterialDestino():
+    def ExpertosBienestarMaterialDestino():
         """
         Cargar datos en el dataFrame Destino  Bienestar material (organizados)
         """
