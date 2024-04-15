@@ -1,14 +1,13 @@
 """
-    Modelo de aprendizaje para la dimension Bienestar material
+    Modelo de aprendizaje para la dimension Bienestar Material
     Random Forest
-    Fecha:18/01/2024
 """
 
 import pickle
 
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, precision_score
 from sklearn.model_selection import train_test_split
 
 from CargueDatos import *
@@ -31,6 +30,10 @@ y_pred = modelo.predict(X_test)
 # Evaluar el rendimiento del modelo
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy}')
+
+
+precision_por_clase = precision_score(y_test, y_pred, average='macro')
+print(f'Precisión por clase: {precision_por_clase}')
 
 # Mostrar la matriz de confusión
 conf_matrix = confusion_matrix(y_test, y_pred)
@@ -58,6 +61,6 @@ prediction = modelo.predict(df_prediction)
 print(prediction)
 
 ### Save model PKL
-pck_file = "BienestarMaterial.pkl"
+pck_file = "Output/BienestarMaterial.pkl"
 with open(pck_file, 'wb') as file:
     pickle.dump(modelo, file)

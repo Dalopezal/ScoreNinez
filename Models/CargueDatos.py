@@ -2,7 +2,7 @@
     Clase Utilizada para la el cargue de los datos de los diferentes archivos de excel
     @todo Alejandro si tienes algun problema con el cargue de los datos me avisas.
     maximo deberia ser cambiar / por \
-    o la otra es usar el seprador del sistema operativo con
+    o la otra es usar el separador del sistema operativo con
     os.path.sep
 """
 

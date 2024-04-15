@@ -64,6 +64,6 @@ print('Confusion Matrix:')
 print(conf_matrix)
 
 ### Save model PKL
-pck_file = "Salud.pkl"
+pck_file = "Output/Salud.pkl"
 with open(pck_file, 'wb') as file:
     pickle.dump(modelo, file)
