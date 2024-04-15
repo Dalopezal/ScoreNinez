@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Prediccíon 0 a 5 Infantes - Universidad javeriana Cali - Salud</title>
+    <title>Prediccíon 0 a 5 Infantes - Universidad Javeriana Cali - Salud</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" sizes="16x16"  href="dist/img/icons8-predict-64.png">
     <link rel="stylesheet" href="dist/css/site.min.css">
@@ -32,11 +32,11 @@
           <div class="col-xs-6 col-sm-3 sidebar-offcanvas" role="navigation">
             <ul class="list-group panel">
               <li class="list-group-item"><i class="glyphicon glyphicon-align-justify"></i> <b>Selección de Dimensiones</b></li>
-              <li class="list-group-item"><a href="salud.html"><i class="glyphicon glyphicon-home"></i>dimensión Salud </a></li>
-              <li class="list-group-item"><a href="seguridad.html"><i class="glyphicon glyphicon-certificate"></i>dimensión Seguridad </a></li>
-              <li class="list-group-item"><a href="materno.html"><i class="glyphicon glyphicon-th-list"></i>dimensión Bienestar Materno </a></li>
-              <li class="list-group-item"><a href="salud.html"><i class="glyphicon glyphicon-list-alt"></i>dimensión Cuidado</a></li>
-              <li class="list-group-item"><a href="material.html" ><i class="glyphicon glyphicon-indent-left"></i>dimensión Bienestar Material</a></li>
+              <li class="list-group-item"><a href="salud.html"><i class="glyphicon glyphicon-home"></i>Dimensión Salud </a></li>
+              <li class="list-group-item"><a href="seguridad.html"><i class="glyphicon glyphicon-certificate"></i>Dimensión Seguridad </a></li>
+              <li class="list-group-item"><a href="materno.html"><i class="glyphicon glyphicon-th-list"></i>Dimensión Bienestar Materno </a></li>
+              <li class="list-group-item"><a href="salud.html"><i class="glyphicon glyphicon-list-alt"></i>Dimensión Cuidado</a></li>
+              <li class="list-group-item"><a href="material.html" ><i class="glyphicon glyphicon-indent-left"></i>Dimensión Bienestar Material</a></li>
               <li class="list-group-item"><a href="#" ><i class="glyphicon glyphicon-tint"></i>Tablero de Municipios</a></li>
               </ul>
           </div>
@@ -45,7 +45,7 @@
               <div class="panel-heading" style="background-color: #434A54 !important; " >
                 <h3 class="panel-title" style="color:beige !important;width: 700px;padding-left: 40px;">
                   <a href="javascript:void(0);" class="toggle-sidebar">
-                    <span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel" ></span></a> Ingreso de datos para el cálculo en la dimensión Salud</h3>
+                    <span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel" ></span></a> Ingreso de datos para el cálculo en la Dimensión Salud</h3>
               </div>
                 <!-- Dimensiones ================================================== -->
                 <div class="content-row">
@@ -59,27 +59,26 @@
                               <hr>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <select name="age" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
-                                    <option value="6">Seleccione la edad del niño</option>
+                                  <select name="age" id="age" class="selecter_2">
+                                    <option>Seleccione la edad del niño</option>
                                     <option value="0">de 0 a 1 año</option>
                                     <option value="1">de 1 a 2 años</option>
                                     <option value="2">de 2 a 3 años</option>
                                     <option value="3">de 3 a 4 años</option>
                                     <option value="4">de 4 a 5 años</option>
-                                    <option value="5">de 5 a 6 años</option>
                                   </select>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <select name="departament" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
-                                    <option value="6">Seleccione el departamento</option>
-                                    <option value="0">Valle del Cauca</option>
-                                    <option value="1">Cauca</option>
+                                  <select id="departament" class="selecter_2">
+                                    <option>Seleccione el departamento</option>
+                                    <option>Valle del Cauca</option>
+                                    <option>Cauca</option>
                                   </select>
                                 </div>
                                 <div class="col-md-6">
-                                  <select name="town" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select id="town" class="selecter_2" >
                                     <option> Seleccione el municipio</option>
                                     <option>POPAYAN</option>
                                     <option>TIMBIO</option>
@@ -172,16 +171,15 @@
                                 <div class="col-md-6">
                                   <br>
                                   <hr>
-                                  <h2 class="content-row-title"><u>Ingreso de datos dimensión Salud</u></h2>
+                                  <h2 class="content-row-title"><u>Ingreso de datos Dimensión Salud</u></h2>
                                   <hr>
                                 </div>
                                 
                               </div>
 
-
                               <div class="row">
                                 <div class="col-md-6">
-                                  <select name="selecter_basic" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select name="selecter_basic" class="selecter_2" >
                                     <option value="0">Seleccione el peso al nacer</option>
                                     <option value="1"><= 1000 g:</option>
                                     <option value="2">>1000 a 1499 g</option>
@@ -191,7 +189,7 @@
                                   </select>
                                 </div>
                                 <div class="col-md-6">
-                                  <select name="selecter_basic" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select name="selecter_basic" class="selecter_2" >
                                     <option value="0">Seleccione Aplicación de dosis pentavalente</option>
                                     <option value="1">Ninguna</option>
                                     <option value="2">1era dosis: a los 2 meses de vida</option>
@@ -203,7 +201,7 @@
                               </div>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <select name="selecter_basic" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select name="selecter_basic" class="selecter_2" >
                                     <option value="0">Seleccione el estado de nutricion</option>
                                     <option value="1">Desnutrición crónica.</option>
                                     <option value="2">Desnutrición aguda</option>
@@ -213,7 +211,7 @@
                                   </select>
                                 </div>
                                 <div class="col-md-6">
-                                  <select name="selecter_basic" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select name="selecter_basic" class="selecter_2" >
                                     <option value="0">Seleccione Aplicacion de dosis Triple viral</option>
                                     <option value="1">Ninguna</option>
                                     <option value="2">primera dosis entre los 12 y 15 meses de edad</option>
@@ -223,7 +221,7 @@
                               </div>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <select name="selecter_basic" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select name="selecter_basic" class="selecter_2" >
                                     <option value="0">¿Tiene Alguna enfermedad?</option>
                                     <option value="1">Ninguna</option>
                                     <option value="2">Enfermedad Tratable</option>
@@ -231,7 +229,7 @@
                                   </select>
                                 </div>
                                 <div class="col-md-6">
-                                  <select name="selecter_basic" class="selecter_2" data-selecter-options='{"label":"Jump Sites","external":"true"}'>
+                                  <select name="selecter_basic" class="selecter_2" >
                                     <option value="0">Seleccione Lactancia a las 24 meses</option>
                                     <option value="1">Si, solo leche materna</option>
                                     <option value="2">No, con otros suplementos</option>
@@ -243,7 +241,7 @@
                               <div class="row">
                               
                                 <div class="col-md-3">
-                                  <button type="button" class="btn btn-primary btn-block">Calcular
+                                  <button type="button" class="btn btn-primary btn-block" id="calc">Calcular
                                       <img src="dist/img/icons8-health-48.png" style="
                                       width: 25px;
                                       padding-left: -15px;"/>
@@ -272,7 +270,7 @@
                                   <input type="Score" placeholder="Score generado" disabled="" class="form-control">
                                 </div>
                                 <div class="col-md-6">
-                                  <textarea rows="3" placeholder=" Concluciones del calculado de la dimensión"  disabled="" class="form-control"></textarea>
+                                  <textarea rows="3" placeholder=" Conclusiones del calculado de la Dimensión"  disabled="" class="form-control"></textarea>
                                 </div>
                               </div>
                               <hr>
@@ -299,6 +297,6 @@
         </div>
       </div>
     </div>
-  <script src="funcionalidades.js"></script>
+  <script src="bootflat-admin/js/funcionalidades.js"></script>
   </body>
 </html>

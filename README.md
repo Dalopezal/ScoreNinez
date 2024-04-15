@@ -43,7 +43,7 @@ Conference
 ## Description   
 What it does   
 
-## How to run   
+## How to run Models
 First, install dependencies   
 ```bash
 # clone project   
@@ -85,7 +85,20 @@ trainer.fit(model, train, val)
 trainer.test(test_dataloaders=test)
 ```
 
-### Citation   
+
+## How to run Front
+
+
+```bash
+cd Front
+```
+and run the server with one of the following command
+```bash
+python -m http.server 8000
+php -S localhost:8000
+
+
+
 ```
 @article{YourName,
   title={Your Title},
