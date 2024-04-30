@@ -54,6 +54,8 @@ data = {
     "public_service": 0
 }
 
+
+
 print(data)
 print('prediction')
 df_prediction = pd.DataFrame([data])
@@ -61,6 +63,6 @@ prediction = modelo.predict(df_prediction)
 print(prediction)
 
 ### Save model PKL
-pck_file = "Output/BienestarMaterial.pkl"
+pck_file = "Output/BienestarMaterialRF.pkl"
 with open(pck_file, 'wb') as file:
     pickle.dump(modelo, file)

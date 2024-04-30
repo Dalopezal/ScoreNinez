@@ -1,5 +1,9 @@
+import re
+from urllib.parse import parse_qs
+
 from response import response, json_response
 import pickle
+import pandas as pd
 import json
 
 
@@ -11,32 +15,36 @@ def load_model_and_predict(model_path, data):
         object: The prediction made by the model.
     """
 
+    df_prediction = pd.DataFrame([data])
+
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
 
-    prediction = model.predict(data)
+    prediction = model.predict(df_prediction)
 
-    return prediction
+    return prediction[0]
 
 
 class Controller:
 
     def bienestar_material(self, request):
+        content_length = int(request.headers.get('Content-Length', 0))
+        raw_data = request.rfile.read(content_length)
 
-        content_length = int(request.headers['Content-Length'])
-        datos_post = request.rfile.read(content_length)
-        datos_json = json.loads(datos_post.decode('utf-8'))
-        variable1 = datos_json['variable1']
+        data = parse_qs(raw_data.decode('utf-8'))
 
-        data = {
-            'mensaje': variable1
+        data_end = {
+            "age": int(data['age'][0]),
+            "category": 1,
+            "rooms": int(data['rooms'][0]),
+            "total_people": int(data['total_people'][0]),
+            "income": int(data['income'][0]),
+            "public_service": int(data['public_service'][0])
         }
 
-        predict = load_model_and_predict('../Models/BienestarMaterial.pkl', data)
+        predict = load_model_and_predict('../Models/Output/BienestarMaterialRF.pkl', data_end)
 
-        json_response(request, {
-            'predict': predict
-        })
+        json_response(request, {"prediction": int(predict)})
 
     def bienestar_materno(self):
         response(self, b'<h1>Bienestar Materno</h1>')
@@ -44,8 +52,8 @@ class Controller:
     def cuidado(self):
         response(self, b'<h1>Cuidado</h1>')
 
-    def salud(self):
-        response(self, b'<h1>Salud</h1>')
+    def salud(self, request):
+        response(request, b'<h1>Salud</h1>')
 
     def seguridad(self):
         response(self, b'<h1>Seguridad</h1>')

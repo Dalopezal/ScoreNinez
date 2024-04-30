@@ -96,14 +96,16 @@ and run the server with one of the following command
 ```bash
 python -m http.server 8000
 php -S localhost:8000
-
-
-
 ```
-@article{YourName,
-  title={Your Title},
-  author={Your team},
-  journal={Location},
-  year={Year}
-}
-```   
+
+
+## How
+
+to run the models using virtualenv
+
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```

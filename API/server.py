@@ -21,6 +21,13 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.handle_request(self.path)
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type')
+        self.end_headers()
+
 
 my_server = HTTPServer(('', 8088), Handler)
 try:
